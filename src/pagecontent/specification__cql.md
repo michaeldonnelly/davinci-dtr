@@ -9,7 +9,7 @@ Like many other programming languages, CQL allows for statements to be nested wi
 
 This pattern of logic structure is referred to by several names, including "eager quitting", "early return" or "short circuiting". The goal is to avoid the execution of statements if they will not be relevant given other information available to the logic.
 
-As an example, a payer may have a set of rules or information that must be gathered on a patient if they are currently pregnant. This information may be gathered through a series of CQL statements. When constructing this CQL for DTR, these statements should be nested in conditionals to first check if the patient is female and then check whether the patient is pregnant.
+As an example, a payer may have a set of rules or specific information that must be gathered on a patient only if they have diabetes. This information may be gathered through a series of CQL statements. When constructing this CQL for DTR, these statements should be nested in conditionals to first check if the patient has diabetes before checking for information dependent on that condition.
 
 ### Expression Naming Conventions
 CQL allows the gathering of information through the use of `define` statements. These statements are given an identifier. When CQL execution is complete, a context will be created where these identifiers are populated with the results of the statement execution.
