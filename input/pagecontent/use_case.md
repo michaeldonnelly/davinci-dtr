@@ -24,15 +24,9 @@ It is possible to have a process where the focus is on the interaction with the 
 Within Documentation Templates and Rules (DTR), the SMART on FHIR app serves as a middleware layer easing payer and provider integrations. Specifically, the relatively low adoption of [Clinical Quality Language (CQL)](https://cql.hl7.org/STU2/) by providers and [FHIR](https://www.hl7.org/fhir/) by payers is eased through the use of a third-party "app".  This functionality will enable DTR to gather documents and templates, retrieve FHIR resources from EMRs, and run rules to reduce the time involved in the Documentation Requirements Lookup Service (DRLS) process.
 
 ### Relation to Coverage Requirements Discovery (CRD)
-[Coverage Requirements Discovery (CRD)](http://hl7.org/fhir/us/davinci-crd/2019May/) addresses the bulleted items below with some DTR overlap:
+The [Coverage Requirements Discovery (CRD)](http://hl7.org/fhir/us/davinci-crd/2019May/) service portion of the workflow is responsible for verifying with the payer a given item, medication, procedure or other service requires documentation and/or Prior Auth. It then consolidates the necessary links for the app to be launched and run. In most cases, the CRD service will return a CDS hooks card populated with an app launch link for the DTR app, a link to a resource, and a DeviceRequest, MedicationRequest, or ServiceRequest resource ID. The app launch link can be used in a user interface in order to launch the app. While CRD may verify that documentation is required, it does not involve any actual authorization or validation of the rule(s). 
 
-* updated coverage information
-* alternative preferred/first-line/lower-cost services/products
-* documents and rules related to coverage
-* forms and templates
-* indications of whether prior authorization is required
-
-The CRD portion of the full workflow might be responsible for verifying with the payer that a given device request requires documentation, and then consolidating the necessary links for the DTR app to be run.  In most cases, the CRD service would return a CDS hooks card populated with a SMART launch link for the DTR app, a link to a questionnaire resource, and a device request resource ID.  While CRD may verify that documentation rules are required, it does not involve any actual authorization or validation of the rule.  The DTR app or native EMR application is responsible for taking the provided rule and checking if available EMR data satisfies the requirements, as well as allowing manual population of missing data.  
+The DTR app or native EMR app is responsible for taking the provided rules and checking if the available EMR data satisfies the requirements, as well as allowing manual population of missing data.  
 
 ### Process Flow
 
