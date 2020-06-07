@@ -14,14 +14,14 @@ Consideration must also be made regarding the CQL version.
 #### Behavior when receiving malformed CQL
  If the CQL is malformed (is not syntactically correct) in any way, the app’s execution engine SHALL not attempt any execution of the malformed CQL, the App SHALL log the error, and the user SHALL be notified with an appropriate on-screen message indicating that population did not occur and they SHALL be allowed to enter the information manually either now or at a later time. The app SHOULD log failures and ensure the maintainer of the CQL/Questionnaire package is notified. 
 
-In an effort to notify the appropriate party or maintainer that the CQL/Questionnaire is malformed, the app developer SHOULD use FHIR resource OperationOutcome. The details property of the OperationOutcome should use `MSG_BAD_SYNTAX` to indicate syntactical errors. The destination of the OperationOutcome could be the endpoint the malformed CQL/questionnaire was retrieved from.
+In an effort to notify the appropriate party or maintainer that the CQL/Questionnaire is malformed, the app developer SHOULD use FHIR resource OperationOutcome. The details property of the OperationOutcome should use `MSG_BAD_SYNTAX` to indicate syntactical errors. The destination of the OperationOutcome should be the endpoint the malformed CQL/questionnaire was retrieved from.
 
 >Since we will use the standard that if the CQL cannot be executed by the app's CQL engine in the SMART on FHIR app or in the capable EMR then it is considered a CQL failure (the CQL author should be taking into account the capability of the app's CQL engine in designing their CQL for execution).
 
 #### Behavior when encountering execution errors
 If any errors are encountered during execution, the app’s engine SHALL not attempt any further execution, and the user SHALL be notified with an appropriate on-screen error message. The app SHALL log failures and ensure the maintainer of the CQL/Questionnaire package is notified. The user should have the option to complete the Questionnaire if possible, despite the error.
 
-In an effort to notify the appropriate party or maintainer that the CQL/Questionnaire is malformed, the app developer SHOULD use FHIR resource OperationOutcome. The destination of the OperationOutcome could be the endpoint the malformed CQL/questionnaire was retrieved from.
+In an effort to notify the appropriate party or maintainer that the CQL/Questionnaire is malformed, the app developer SHOULD use FHIR resource OperationOutcome. The destination of the OperationOutcome should be the endpoint the malformed CQL/questionnaire was retrieved from.
 
 >Note: A query for data that returns no results is never considered a failure.
 
