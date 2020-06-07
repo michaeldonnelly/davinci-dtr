@@ -8,7 +8,9 @@ If the Documentation Templates and Rules (DTR) / Substitutable Medical Applicati
 
 Any EMR with SMART on FHIR support should be prepared to deal with the implications of providing a client with the scopes they request.  For example, EMRs can severly limit FHIR search capabilities for clients, requiring a patient ID in any search query to ensure the client can only access resoures related to that patient.
 
-When meeting the DTR / SMART on FHIR application requirements using a distinct app (i.e. not within the  Electronic Medical Record (EMR)), the app SHALL have a distinct client id for when it's being invoked purely as a mechanism to supplement EMR data vs. when it's being invoked to potentially share data back to the payer.
+When meeting the DTR / SMART on FHIR App requirements using a distinct app (i.e. not within the  Electronic Medical Record (EMR)), the App SHALL have a distinct client id for when it's being invoked purely as a mechanism to supplement EMR data vs. when it is being invoked to potentially share data back to the payer.
+
+>Note: CRD and DTR are designed to function without use case Prior Auth Support (PAS). For example, to augment the documentation of medical necessity. Since not all orders require Prior Auth some only require documentation therefore not all QuestionnaireResponses will need to be sent to a payer or PAS service. 
 
 This will allow the scopes to be different depending on whether data might flow to the payer. It will also allow the EMR to appropriately audit data accesses where data might flow external to the EMR.
 Additionally, there is a requirement that the data passed to a payer SHALL also be stored in the EMR where it can be audited for appropriate use.
