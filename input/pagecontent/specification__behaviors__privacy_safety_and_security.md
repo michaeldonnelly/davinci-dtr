@@ -21,7 +21,7 @@ It is under the control of the SMART on FHIR app or the capable EMR, based on th
 
 Data retrieved by the SMART app from the provider's FHIR server may or may not be shared with or kept by the payer. Depending upon the SMART app's architecture, patient information obtained by the SMART app may or may not leave the provider's network.
 
-Providers should carefully evaluate SMART apps conforming to the DTR IG to evaluate risk. In this case, patient data will be requested by the server hosting the DTR application. This may be external to the provider organization.
+Providers should carefully evaluate SMART apps conforming to the DTR IG to evaluate risk. In this case, patient data will be requested by the server hosting the DTR process. This may be external to the provider organization.
 
 Payer systems SHALL use information received solely for purpose for which the documentation template was created (typically processing of a specific claim or prior authorization request) and SHALL NOT use information received over the DTR interfaces for any additional purposes other than audit.
 
