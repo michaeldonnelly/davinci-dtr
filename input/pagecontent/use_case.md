@@ -51,6 +51,8 @@ This shows an overview of how the SMART on FHIR App fits into the flow when orde
 
  > If the resulting information is to be sent to a third party (e.g. payer). The DTR / SMART on FHIR App should include a step requiring the provider to grant permission to send along the information gathered in the form before sending. However this should be configurable on a site or provider basis.
 
+>If the resulting information is to be sent to a third party (e.g. payer) see section [Section 4.4.5.1](specification__behaviors__persisting_application_state.html#smart-on-fhir-applications-and-servers)
+
 >DTR is not intended to change orders, only to gather documentation related to a specific service and where it is incomplete, provide the ability to capture the additional documentation required. 
 
 ![Process Flow Detail](Process_Flow_Detail.png){:style="float: none;"}
