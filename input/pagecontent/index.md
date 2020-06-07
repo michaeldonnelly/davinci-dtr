@@ -5,7 +5,11 @@ The Documentation Templates and Rules (DTR) Implementation Guide (IG) specifies 
 
 This IG leverages Clinical Quality Language (CQL) to allow payers to inspect a patient's record for the necessary information related to the required documentation for a proposed item, medication, procedure or other service. The IG details the use of a payer provided Questionnaire resource and results from CQL execution to generate a QuestionnaireResponse resource containing the necessary information. This IG also provides methods to persist the QuestionnaireResponse in the provider's Electronic Medical Record (EMR) system and “optionally” send the QuestionnaireResponse to the payer.
 
->CQL and FHIR Questionnaires SHALL be used in order to conform with this IG. Other means to render rules and questions are acceptable but will only be considered additional functionality and non-conformant without CQL and FHIR Questionnaire conformance.
+>CQL and FHIR Questionnaires SHALL be required in the event that the payer is NOT acting as a unique (not all Payer) SMART application provider.
+
+>CQL and the FHIR Questionnaires SHOULD be allowed for other CDS Hooks (CRD) and SMART on FHIR or native applications to accomplish the same goals.
+
+Since this not a FHIR server there is no conformance profile.
 
 Although not detailed in this IG it may be possible to achieve the same level of integration with a native EMR app instead of a SMART on FHIR app. The same payer sourced FHIR Questionnaire and CQL could be consumed by the native EMR app. The interface for exchanging data would need to be developed further in a method that achieves the same level of interoperability that the SMART on FHIR app achieves. A native EMR app MAY play the role of the DTR app if it reduces burden.
 
