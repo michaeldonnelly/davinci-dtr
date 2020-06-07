@@ -16,9 +16,9 @@ The goal of DTR is to collect clinical documentation and/or to encourage the com
 
 It is possible to have a process where the focus is on the interaction with the EMR via an external application(s). Examples of external systems are administrative, payment, practice management, scheduling, and other applications. 
 
->If information is not available to the SMART on FHIR application, then the application will need to prompt the provider to enter the missing information. Ultimately, the solution is to provide greater integration (including possibly FHIR APIs) between the EMR and other supporting applications. (Quality measures may also require this type of integration)
+>If information is not available to the SMART on FHIR application, then the application will need to prompt the provider to enter the missing information. Ultimately, the solution is to provide greater integration (including possibly FHIR APIs) between the EMR and other supporting applications. (e.g. Quality measures may also require this type of integration)
 
->If Electronic Medical Record (EMR) is used in this IG it should be considered synonymous to EMR. 
+>Also, if and when Electronic Medical Record (EMR) is used in this IG it should be considered synonymous to Electronic Health Record (EHR). 
 
 #### DTR compliant SMART on FHIR app
 Within Documentation Templates and Rules (DTR), the SMART on FHIR app (or equivalent native EHR app) serves as a middleware layer easing payer and provider integrations. Specifically, the relatively low adoption of [CQL](https://cql.hl7.org//) and [FHIR](https://www.hl7.org/fhir/) by payers and providers can be eased through the use of a third-party "app". This functionality will enable DTR to gather documents and templates, retrieve FHIR resources from EMRs, and run rules to reduce the time involved in looking up documentation requirements.
