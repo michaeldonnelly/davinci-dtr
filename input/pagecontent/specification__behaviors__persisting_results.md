@@ -24,7 +24,9 @@ The DTR application SHALL store this information in the EMR - either as a Docume
 EMR systems that conform to US Core STU3 allow for the creation of DocumentationReference resources through a FHIR API. As such, the DTR application should use the typical [FHIR create](http://hl7.org/fhir/R4/http.html#create) interaction to write the documentation into the EMR.
 
 ### QuestionnaireResponse
-The DTR application creates a QuestionnaireResponse resource through the course of normal operation. This resource may be saved to the patient record in the EMR system of the healthcare provider if it is supported. It may also be transmitted to the Payer IT system.
+The DTR application creates a QuestionnaireResponse resource through the course of normal operation. This resource SHOULD be saved to the patient record in the EMR system of the healthcare provider if supported. It may also be transmitted to the Payer IT system.
+
+Since reusing QuestionnaireResponses may save time and effort. Reusing QuestionnaireResponses should be considered. In the case of a QuestionnaireResponse being reused. The data in the QuestionnaireResponse should be refreshed where possible with the latest data from the EMR system when being reused. 
 
 #### Interaction with Payer API
 The Payer IT system should support the FHIR create interaction to allow the DTR application to send the QuestionnaireResponse resource to the payer. The FHIR endpoint for the payer may require authentication. If it is required, it SHALL follow the procedures described in [Section 4.4.1](specification__behaviors__retrieval_of_payer_resources.html#authentication-of-smart-on-fhir-application-to-payer-api) - Authentication of SMART on FHIR application to payer API.
