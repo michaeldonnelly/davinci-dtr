@@ -2,14 +2,14 @@ Users of the Documentation Templates and Rules (DTR) application are likely to b
 
 The DTR process should anticipate that users may not be able to complete a full interaction between launch from a Clinical Decision Support (CDS) Hooks Card to providing a response back to the payer. It is recommended that DTR conformant [SMART on FHIR](http://hl7.org/fhir/smart-app-launch) applications preserve state automatically as a user interacts with it. In this manner, the user does not need to explicitly take action to save their state.
 
-Exact mechanisms for saving state are outside the scope of this implementation guide. The following sections describe mechanisms that a DTR process may use to establish the data necessary to store and retrieve state.
+The exact mechanisms for saving state are outside the scope of this implementation guide. Having said that the following sections describe some mechanisms that a DTR process may use to establish the data necessary to store and retrieve state.
 
 ### SMART on FHIR applications and Servers
 SMART on FHIR applications must be launched by a host that is accessible to the launching Electronic Medical Record (EMR) System. Once launched, a SMART on FHIR application may communicate with the host that it was initially launched from. This may be to retrieve data to assist in the functionality of the SMART on FHIR application, or it may be to record actions taken by the application user.
 
 In the case of DTR, the SMART on FHIR application may be launched from a number of locations. A likely scenario is that the DTR conformant SMART on FHIR application will be hosted by a Payer IT system.
 
-The DTR process may send information back to the host it was launched from to save application state. As mentioned in the previous section, the services and formats used to communicate state information are outside the scope of this implementation guide.
+The DTR process may send information back to the host it was launched from to save application state. As mentioned in the previous section, the services and formats used to communicate state information are outside the scope of this implementation guide.   
 
 ### Requesting User Identity
 To persist application state, the DTR process will need to know who is currently using the application. SMART on FHIR provides methods for the application to obtain this information.
