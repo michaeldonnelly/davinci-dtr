@@ -1,9 +1,7 @@
 ### Use of Card.links
 One entry point into the Documentation Templates and Rules (DTR) application is launching from a [Clinical Decision Support (CDS) Hooks Card](https://cds-hooks.hl7.org/1.0/#card-attributes). 
 
-DTR processs SHALL, to the extent possible, capture and return information that is relevant to the specific use case.
-
- As a part of a CDS Hooks response, if there is a need for further information then the Payer IT system SHALL return a Card object with at least one Link object populated in the Card.links property. Otherwise no Link object would be provided. The Link object SHALL have a type property set to smart. The Link object SHALL have a URL property set to the launch URL of the DTR process.
+As a part of a CDS Hooks response, if there is a need for further information then the Payer IT system SHALL return a Card object with at least one Link object populated in the Card.links property. Otherwise no Link object would be provided. The Link object SHALL have a type property set to smart. The Link object SHALL have a URL property set to the launch URL of the DTR process.
 
 A payer may secure endpoints from which the DTR process will retrieve additional artifacts to support execution. If the payer does require authentication, the DTR app requests an OAuth token using SMART backend services and then uses that second access token to authenticate against the payer FHIR server.
 
