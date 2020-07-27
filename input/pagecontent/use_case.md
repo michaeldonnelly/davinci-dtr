@@ -32,7 +32,7 @@ The DTR app or native EMR app is responsible for taking the provided rules and c
 
 This shows a high-level overview of CRD and DTR (DTR is the SMART on FHIR App)
 
-![CRD DTR Flow](DTR_Example_Workflow.png){:style="float: none;"}
+![CRD DTR Flow](CRD_DTR_Flow.png){:style="float: none;"}
 
 ### Oxygen Therapy Ordering Example
 This example shows an overview of how the DTR SMART App (or native App) fits into a workflow when ordering Home Oxygen Therapy. 
@@ -55,4 +55,4 @@ This example shows an overview of how the DTR SMART App (or native App) fits int
 
 >DTR is not intended to change orders, only to gather documentation related to a specific service and where it is incomplete, provide the ability to capture the additional documentation required. 
 
-![Process Flow Detail](Process_Flow_Detail.png){:style="float: none;"}
+![Process Flow Detail](DTR_Example_Workflow.png){:style="float: none;"}
