@@ -28,11 +28,11 @@ The [Coverage Requirements Discovery (CRD)](http://hl7.org/fhir/us/davinci-crd/2
 
 The DTR app or native EMR app is responsible for taking the provided rules and checking if the available EMR data satisfies the requirements, as well as allowing manual population of missing data.  
 
-### Process Flow
+### Example Workflow
 
 This shows a high-level overview of CRD and DTR (DTR is the SMART on FHIR App)
 
-![CRD DTR Flow](CRD_DTR_Flow.png){:style="float: none;"}
+![CRD DTR Flow](DTR_Example_Workflow.png){:style="float: none;"}
 
 ### Oxygen Therapy Ordering Example
 This shows an overview of how the SMART on FHIR App fits into the flow when ordering oxygen therapy.
