@@ -35,14 +35,14 @@ This shows a high-level overview of CRD and DTR (DTR is the SMART on FHIR App)
 ![CRD DTR Flow](DTR_Example_Workflow.png){:style="float: none;"}
 
 ### Oxygen Therapy Ordering Example
-This shows an overview of how the SMART on FHIR App fits into the flow when ordering oxygen therapy.
-
-1. Oxygen Therapy order triggers appropriate CDS hook.
-2. It is determined that there is prior authorization required and there are forms to be filled out.
-3. The SMART on FHIR App fetches CQL (rules) and a FHIR Questionnaire.
-4. The engine then extracts as many answers as it can in order to formulate a FHIR QuestionnaireResponse.
-5. If there is missing information, the user can manually provide it to fully populate the Questionnaire response.  Otherwise, the Questionnaire is not shown to the user unless specifically requested.
-6. It then writes the FHIR QuestionnaireResponse back to Payer server and optionally to the EMR in a text format.
+This example shows an overview of how the DTR SMART App (or native App) fits into a workflow when ordering Home Oxygen Therapy. 
+   
+1. It is determined that documentation and/or prior authorization is required for coverage and there are Questionnaire(s) to be filled out.
+2. After the DTR SMART App (or native App) is launched from the CDS hook card.
+3. The DTR SMART App (or native App) fetches CQL (rules) and a FHIR Questionnaire from the Payer Server.
+4. The engine then extracts as many answers as it can in order to pre-populate a FHIR QuestionnaireResponse with FHIR-based EHR data.
+5. If there is missing information, the user can manually provide it to fully populate the QuestionnaireResponse. Otherwise, the Questionnaire is not shown to the user unless specifically requested.
+6. It then writes the FHIR QuestionnaireResponse back to EHR server and optionally to the Payer.
 
 > Note: 
 > There is no need for the user to see the form if it can be auto-completed unless they need to approve sending the result to the payer or to "sign" the information prior to submission.  FHIR Questionnaires should indicate which items are necessary for auto-completion using the "required" property.  The application SHALL give the provider the ability, but not the requirement to review any information prior to sending it to a third party. This ability may be "turned-off" by the organization and possibly the individual provider. 
