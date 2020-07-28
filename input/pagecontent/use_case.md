@@ -28,7 +28,7 @@ The [Coverage Requirements Discovery (CRD)](http://hl7.org/fhir/us/davinci-crd/2
 
 The DTR app or native EMR app is responsible for taking the provided rules and checking if the available EMR data satisfies the requirements, as well as allowing manual population of missing data.  
 
-### Example Workflow
+### CRD and DTR Workflow
 
 This shows a high-level overview of CRD and DTR (DTR is the SMART on FHIR App or native App)
 
@@ -45,7 +45,7 @@ Assuming the DME nurse wants to fill out the required documentation. The DME nur
 
 ![CRD DTR Flow](CRD_DTR_Flow.png){:style="float: none;"}
 
-### Oxygen Therapy Ordering Example
+### Home Oxygen Therapy Ordering Example
 This example shows an overview of how the DTR SMART App (or native App) fits into a workflow when ordering Home Oxygen Therapy. 
    
 1. It is determined that documentation and/or prior authorization is required for coverage and there are Questionnaire(s) to be filled out.
@@ -55,15 +55,14 @@ This example shows an overview of how the DTR SMART App (or native App) fits int
 5. If there is missing information, the user can manually provide it to fully populate the QuestionnaireResponse. Otherwise, the Questionnaire is not shown to the user unless specifically requested.
 6. It then writes the FHIR QuestionnaireResponse back to EHR server and optionally to the Payer.
 
-> Note: 
-> There is no need for the user to see the form if it can be auto-completed unless they need to approve sending the result to the payer or to "sign" the information prior to submission.  FHIR Questionnaires should indicate which items are necessary for auto-completion using the "required" property.  The application SHALL give the provider the ability, but not the requirement to review any information prior to sending it to a third party. This ability may be "turned-off" by the organization and possibly the individual provider. 
+> There is no need for the user to see the questionnaire if it can be auto completed unless they need to approve sending the result to the payer or to "sign" the information prior to submission. The application SHALL give the provider the ability, but not the requirement to review any information prior to sending it to a third party. This ability may be "turned-off" by the organization and possibly the individual provider. 
 
-> Questionnaires SHALL indicate which items are necessary using the "required" property, and the application should use that property to decide when a questionnaire has been sufficiently auto-completed.
+> Questionnaires SHALL indicate which items are necessary using the "required" property, and the application should use that property to decide when a questionnaire has been sufficiently auto completed.
 
- > If the resulting information is to be sent to a third party (e.g. payer). The DTR / SMART on FHIR App should include a step requiring the provider to grant permission to send along the information gathered in the form before sending. However this should be configurable on a site or provider basis.
+ > If the resulting information is to be sent to a third party (e.g. payer). The DTR / SMART on FHIR App should include a step requiring the provider to grant permission to send along the information gathered in the questionnaire before sending. However, this should be configurable on a site or provider basis.
 
 >If the resulting information is to be sent to a third party (e.g. payer) see section [Section 4.4.5.1](specification__behaviors__persisting_application_state.html#smart-on-fhir-applications-and-servers)
 
->DTR is not intended to change orders, only to gather documentation related to a specific service and where it is incomplete, provide the ability to capture the additional documentation required. 
+>DTR is not intended to change orders, only to gather documentation related to a specific service and where it is incomplete, provide the ability to capture the additional required documentation. 
 
 ![Process Flow Detail](DTR_Example_Workflow.png){:style="float: none;"}
