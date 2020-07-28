@@ -36,17 +36,12 @@ Note: This workflow is just one example used to help illustrate the DRLS APIs. I
  
 As an example, a DME nurse might order, “Home Oxygen Therapy” 
 
-CRD
-
-1. The first 3 light blue rectangles shown, are used to determine if there are documentation and/or Prior Auth requirements for coverage
-2. The EHR would allow for the ordering of “Home Oxygen Therapy”. The EHR would then compose a FHIR based message to be used when calling the “Coverage Requirements Discovery” (CRD) API (shown in the 3rd light blue box)
-3. CRD then runs rules retrieved from a repository to determine if there are documentation and/or Prior Auth requirements for coverage. The API and repository are shown in the light brown areas. In this scenario a response is sent back to the EHR/DME nurse in the form of a CDS Hooks card, saying there are “documentation requirements”
-
-DTR
-
+1. The first 3 light blue rectangles shown, are used to determine if there are documentation and/or Prior Auth requirements for coverage.
+2. The EHR would allow for the ordering of “Home Oxygen Therapy”. The EHR would then compose a FHIR based message to be used when calling the “Coverage Requirements Discovery” (CRD) API (shown in the 3rd light blue box).
+3. CRD then runs rules retrieved from a repository to determine if there are documentation and/or Prior Auth requirements for coverage. The API and repository are shown in the light brown areas. In this scenario a response is sent back to the EHR/DME nurse in the form of a CDS Hooks card, saying there are “documentation requirements”. 
 4. In the CDS Hooks card there is a link that will allow the DME nurse to launch the “Documentation, Templates and Rules” (DTR) Smart App (or native App) shown in the salmon colored area. DTR will retrieve the appropriate questionnaire(s) and rule(s) from the same repository used for CRD.
 Assuming the DME nurse wants to fill out the required documentation. The DME nurse would click the SMART App/DTR (or native App) link which pre-populates a FHIR based Questionnaire with data from the EHR. In the event data is known to be available but does not yet exist in the EHR the DME nurse could attest the data in question exists in the EHR.
-5. Then the DME nurse would manually populate the fields that did not get pre-populated. When the documentation is complete (or partially complete) the DME nurse would save the QuestionnaireResponse. DRLS would then write the FHIR based QuestionnaireResponse back to the EHR. At this point the QuestionnaireResponse could also be sent to any ancillary service. In the event the QuestionnaireResponse was incomplete a Task could be created to allow for the QuestionnaireResponse to completed at a later time. 
+5. Then the DME nurse would manually populate the fields that did not get pre-populated. When the documentation is complete (or partially complete) the DME nurse would save the QuestionnaireResponse. DRLS would then write the FHIR based QuestionnaireResponse back to the EHR. At this point the QuestionnaireResponse could also be sent to any ancillary service. In the event the QuestionnaireResponse was incomplete a Task could be created to allow for the QuestionnaireResponse to be completed at a later time. 
 
 ![CRD DTR Flow](CRD_DTR_Flow.png){:style="float: none;"}
 
