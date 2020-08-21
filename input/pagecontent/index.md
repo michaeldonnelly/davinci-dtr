@@ -9,9 +9,9 @@ This IG leverages Clinical Quality Language (CQL) to allow payers to inspect a p
 
 >CQL and the FHIR Questionnaires SHOULD be allowed for other CDS Hooks (CRD) and SMART on FHIR or native applications to accomplish the same goals.
 
-Since this not a FHIR server there is no conformance profile.
+Since this is not a FHIR server there is no conformance profile.
 
-Although not detailed in this IG it may be possible to achieve the same level of integration with a native EMR app instead of a SMART on FHIR app. The same payer sourced FHIR Questionnaire and CQL could be consumed by the native EMR app. The interface for exchanging data would need to be developed further in a method that achieves the same level of interoperability that the SMART on FHIR app achieves. A native EMR app MAY play the role of the DTR app if it reduces burden. Because of this when the Smart on FHIR is mentioned in this IG native EHR App or app also applies.  
+Although not detailed in this IG it may be possible to achieve the same level of integration with a native EMR app instead of a SMART on FHIR app. The same payer sourced FHIR Questionnaire and CQL could be consumed by the native EMR app. The interface for exchanging data would need to be developed further in a method that achieves the same level of interoperability that the SMART on FHIR app achieves. A native EMR app MAY play the role of the DTR app if it reduces burden. Because of this when the Smart on FHIR app is mentioned in this IG, native EHR app or app also applies.
 
 Provenance SHOULD be created and persisted with information created during the execution of the CQL and questionnaire. Also, when the questionnaire and its associated resources are exchanged with the source of the rules appropriate provenance resource(s) SHOULD be created and exchanged.
 
