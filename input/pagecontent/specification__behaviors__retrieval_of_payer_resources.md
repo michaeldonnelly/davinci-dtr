@@ -2,8 +2,8 @@ The DTR process will need to retrieve resources from a payer IT system to operat
 
 | Field    | Optionality | Type     | Description |
 | -------- | ----------- | -------- | ----------- |
-| fhirPath | OPTIONAL    | *string* | The path used to retrieve the questionnaire and related CQL resources. |
-| filePath | OPTIONAL    | *string* | The base URL used to retrieve the questionnaire and related CQL resources. If left blank the app should use a default base URL. |
+| fhirPath | OPTIONAL    | *string* | The path used to retrieve fhir resources from the payer, like the questionnaire. |
+| filePath | OPTIONAL    | *string* | The base URL used to retrieve rules and CQL resources fom the payer. If left blank the app should use a default base URL. |
 | template | OPTIONAL    | *string* | The canonical URL of the Questionnaire for the DTR process to use for execution. |
 | request  | OPTIONAL    | *string* | The canonical URL of or copy of the draft request resource for which documentation requirements are being gathered.  |
 | response  | OPTIONAL    | *string* | The canonical URL of the QuestionnaireResponse representing the session which should be relaunched  |
